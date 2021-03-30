@@ -30,7 +30,7 @@
     <script>
         async function getRandomDog()
         {
-            let url ="https://api.imgur.com/3/g/memes/{image_id}";
+            let url ="https://api.thecatapi.com/v1/images/search";
             try{
                 let res = await fetch(url);
                 return await res.json();
