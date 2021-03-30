@@ -30,7 +30,7 @@
     <script>
         async function getRandomMeme()
         {
-            let url ="https://rapidapi.com/collection/meme"
+            let url ="https://api.memegen.link/images/random"
             try{
                 let res = await fetch(url);
                 return await res.json();
@@ -41,12 +41,12 @@
         }
         async function renderMeme()
         {
-            let mems = await getRandomMems();
-            var mem = [];
-            mem = new Image();///created the image object
-            mem.src=mems.message;///taking the image path
-            mem.width="620";
-            mem.height="320";
+            let memes = await getRandomMems();
+            var meme = [];
+            meme = new Image();///created the image object
+            meme.src=mems.message;///taking the image path
+            meme.width="620";
+            meme.height="320";
             ///limit the image display on screen
             var l=images.length;
             if(l>3)
@@ -57,7 +57,7 @@
                 }
             }
             ///end of limit the image
-            document.body.appendChild(mem);
+            document.body.appendChild(meme);
         }    
     </script>
 </body>
