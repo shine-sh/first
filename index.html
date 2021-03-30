@@ -30,7 +30,7 @@
     <script>
         async function getRandomMeme()
         {
-            let url ="https://api.memegen.link/templates/"
+            let url ="https://api.memegen.link/templates/random"
             try{
                 let res = await fetch(url);
                 return await res.json();
