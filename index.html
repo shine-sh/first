@@ -6,16 +6,17 @@
     <title>MAGAZINCHIK</title>
 <style>
     body{
+    margin-top: 30px;
     background: url(магазинчиккк.jpg)
     }
     #button_style{
       width: 100%;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       border-style: dotted;
       color: blueviolet;
       background-color: inherit;
       border-color: yellowgreen;
-      text-decoration: yellowgreen;
+      text-decoration: blink;
       cursor: pointer;
 
     }
@@ -23,9 +24,35 @@
 </head>
 <body>
     <div>
-        <button id="button|_style" onclick="renderDogs();">
+        <button id="button_style" onclick="renderMeme();">
         Генерировать ячейку мема!
     </button>
     </div>
+    <script>
+        async function getRandomMeme()
+        {
+            let url ="https://drive.google.com/drive/folders/1yqwl7iRr6ySQs8H1PoMGuBeV50_8NMqB?usp=sharing"
+            try{
+                let res = await fetch(url);
+                return await res.json();
+            }
+            catch(error){
+                console.log(error);
+            }
+        }
+        async function renderMeme()
+        {
+            let mems = await getRandomMems();
+            var mem = [];
+            mem = new Image();///created the image object
+            mem.src=mems.message;///taking the image path
+            mem.width="620";
+            mem.height="320";
+            var images = document.getElementById('img');
+            
+            document.body.appendChild(mem);
+            
+        }
+    </script>
 </body>
 </html>
