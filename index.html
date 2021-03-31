@@ -22,65 +22,16 @@
 </style>
 </head>
 <body>
-    <div>
-        <button id="button_style" onclick="renderDogs();">
+    <div id="container">
+        <div id="inner_comtainer">
+            <img id="image_shower"/>
+    </div>
+    <div id="button_container">
+        <button onclick="get_random_image();"> <i class="fas fa-random"></i>
         To See Random Dogs Click Here
         </button>
+        <div>
     </div> 
-    <div>
-       image_array = [
-       '1.jpg',
-       '2.jpg',
-       '3.jpg',
-       '4.jpg'
-   ]
-   
-   function get_random_image(){
-       // Get a random index
-       random_index = Math.floor(Math.random() * image_array.length);
-   
-       // Get an image at the random_index
-       selected_image = image_array[random_index]
-   
-       // Display the image
-       document.getElementById('image_shower').src = `./images/${selected_image}`
-    </div> 
-
 </div>
-    <script>
-        async function getRandomDog()
-        {
-            let Imagesss;
-            try{
-                let res = awaitfetch(url);
-                return await res.json();
-            }
-            catch(error){
-                console.log(error);
-            }
-        }
-        async function renderDogs()
-        {
-            let dogs = await getRandomDog();
-            var dog =[];
-            dog = new Image();//created the image object
-            dog.src=dogs.message;///taking the image path
-            dog.width="600";
-            dog.height="300";
-            var images = document.getElementsByTagName('img');
-            ///limit the image display on screen
-            var l=images.length;
-            if(l>3)
-            {
-                for(var p=0;p<l;p++)
-                {
-                    images[0].parentNode.removeChild(images[0]);
-                }
-            }
-            ///end of limit the image
-            document.body.appendChild(dog);
-        }
-    ////////Its completed i hope you like it :P)    
-    </script>
 </body>
 </html>
