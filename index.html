@@ -30,7 +30,7 @@
     <script>
         async function getRandomDog()
         {
-            let url ="http://random.cat/view/1150";
+            let url ="https://api.thecatapi.com/v1/images/search";
             try{
                 let res = await fetch(url);
                 return await res.json();
