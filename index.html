@@ -26,16 +26,26 @@
         <button id="button_style" onclick="renderDogs();">
         To See Random Dogs Click Here
         </button>
-    </div>
+    </div> 
+    <div>
+       image_array = [
+       '1.jpg',
+       '2.jpg',
+       '3.jpg',
+       '4.jpg'
+   ]
+   
+   function get_random_image(){
+       // Get a random index
+       random_index = Math.floor(Math.random() * image_array.length);
+   
+       // Get an image at the random_index
+       selected_image = image_array[random_index]
+   
+       // Display the image
+       document.getElementById('image_shower').src = `./images/${selected_image}`
+    </div> 
 
-<div class="wrap-table">
-  <div class="wrap-row">
-    <div class="cell"><img src="file:///Users/alexandra/Desktop/fe350346e9eac61ac9780f8dc8d9bf1c.jpg" alt=""/></div>
-    <div class="cell"><img src="file:///Users/alexandra/Desktop/223fb98fafa05545acf60b92419b2511.jpg" alt=""/></div>
-    <div class="cell"><img src="file:///Users/alexandra/Desktop/69345682a4c392d1eeab645605cf59f8.jpg" alt=""/></div>
-    <div class="cell"><img src="file:///Users/alexandra/Desktop/mem-s-kotom-za-stolom.jpg" alt=""/></div>
-  </div>
-  </div>
 </div>
     <script>
         async function getRandomDog()
