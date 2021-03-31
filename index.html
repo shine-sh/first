@@ -2,34 +2,51 @@
 <html lang="en" dir="ltr">
 <head>
     <title>MAGAZINCHIK</title>
-    <style>
-    body{
-    margin-top: 30px;
-    background: url(магазинчиккк.jpg)
-    }
-    #button_style{
-      width: 100%;
-      margin-bottom: 50px;
-      border-style: dashed;
-      color: yellowgreen;
-      background-color:blueviolet;
-      border-color: blueviolet;
-        text-decoration: blink;
-        cursor: pointer;    
-    }
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <script src ></script> 
 </style>
 </head>
 <body>
-    <div id="container">
-        <div id="inner_comtainer">
-            <img id="image_shower"/>
-    </div>
-    <div id="button_container">
-        <button onclick="get_random_image()"> <i class="fas fa-random"></i>
-        Here
+    <div>
+        <button id="button_style" onclick="renderDogs();">
+        To See Random Dogs Click Here
         </button>
-        <div>
-    </div> 
-</div>
+    </div>
+    <script>
+        async function getRandomDog()
+        {
+            let url ="https://dog.ceo/api/breeds/image/random";
+            try{
+                let res = await fetch(url);
+                return await res.json();
+            }
+            catch(error){
+                console.log(error);
+            }
+        }
+        async function renderDogs()
+        {
+            let dogs = await getRandomDog();
+            var dog =[];
+            dog = new Image();
+            dog.src=dogs.message;
+            dog.width="620";
+            dog.height="320";
+            var images = document.getElementsByTagName('img');
+    
+            var l=images.length;
+            if(l>3)
+            {
+                for(var p=0;p<l;p++)
+                {
+                    images[0].parentNode.removeChild(images[0]);
+                }
+            }
+            
+            document.body.appendChild(dog);
+        }
+        
+    </script>
 </body>
 </html>
