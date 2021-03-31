@@ -30,7 +30,7 @@
     <script>
         async function getRandomDog()
         {
-            let url ="https://api.thecatapi.com/v1/images/search";
+            let url ="http://random.cat/view/1150";
             try{
                 let res = await fetch(url);
                 return await res.json();
@@ -45,7 +45,7 @@
             var dog =[];
             dog = new Image();//created the image object
             dog.src=dogs.message;///taking the image path
-            dog.width="300";
+            dog.width="600";
             dog.height="300";
             var images = document.getElementsByTagName('img');
             ///limit the image display on screen
